@@ -80,6 +80,15 @@
     "data": {
       "type": "object",
       "properties": {
+	    "acknowledgement": {
+          "type": "string"
+        },
+		"user": {
+          "type": "string"
+        },
+		"uri": {
+          "type": "string"
+        },
         "customData": {
           "type": "array",
           "items": {
@@ -99,6 +108,9 @@
           }
         }
       },
+	  "required": [
+        "acknowledgement"
+      ],
       "additionalProperties": false
     },
     "links": {

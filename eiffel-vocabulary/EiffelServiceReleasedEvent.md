@@ -20,6 +20,31 @@ The EiffelServiceReleasedEvent is to declare that a Service Instance (e.g VM) ha
 
 ## Data Members
  
+### data.serviceinstance
+__Type:__ String  
+__Required:__ Yes  
+__Description:__ The name of the Service instance that was released.
+
+### data.uri
+__Type:__ String  
+__Required:__ No  
+__Description:__ A URI where further information can be obtained, if applicable.
+
+## Legal Link Types
+### CAUSE
+__Legal targets:__ Any  
+__Multiple allowed:__ Yes  
+__Description:__ Identifies a cause of the event occurring. SHOULD not be used in conjunction with __CONTEXT__: individual events providing __CAUSE__ within a larger context gives rise to ambiguity. It is instead recommended to let the root event of the context declare __CAUSE__.  
+
+### CONTEXT
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md), 
+__Multiple allowed:__ No  
+__Description:__ Identifies the activity of which the event constitutes a part. SHOULD not be used in conjunction with __CAUSE__, see above. Note that multiple layers may be modeled using __CONTEXT__, e.g. an activity being part of another activity.
+
+### ACTIVITY_EXECUTION
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
+__Multiple allowed:__ No  
+__Description:__ Declares the activity execution the event relates to. In other words, [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md) acts as a handle for the activity execution. This differs from __CONTEXT__. In __ACTIVITY_EXECUTION__ the source carries information pertaining to the target (i.e. the activity started, finished or was canceled). In __CONTEXT__, on the other hand, the source constitutes a subset of the target.
 
 ## Version History
 | Version   | Introduced in                                          | Changes                                 |

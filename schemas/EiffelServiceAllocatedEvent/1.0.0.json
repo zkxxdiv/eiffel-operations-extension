@@ -80,6 +80,15 @@
     "data": {
       "type": "object",
       "properties": {
+	    "serviceinstance": {
+          "type": "string"
+        },
+		"owner": {
+          "type": "string"
+        },
+		"uri": {
+          "type": "string"
+        },		
         "customData": {
           "type": "array",
           "items": {
@@ -99,7 +108,11 @@
           }
         }
       },
-      "additionalProperties": false
+      "required": [
+        "serviceinstance",
+        "owner"       
+      ],
+	  "additionalProperties": false
     },
     "links": {
       "type": "array",

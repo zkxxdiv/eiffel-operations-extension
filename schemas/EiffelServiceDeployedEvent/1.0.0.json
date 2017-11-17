@@ -80,6 +80,18 @@
     "data": {
       "type": "object",
       "properties": {
+	    "servicename": {
+          "type": "string"
+        },
+		"instancename": {
+          "type": "string"
+        },
+		"owner": {
+          "type": "string"
+        },
+		"uri": {
+          "type": "string"
+        },
         "customData": {
           "type": "array",
           "items": {
@@ -99,7 +111,13 @@
           }
         }
       },
-      "additionalProperties": false
+      "required": [
+        "servicename",
+        "instancename",
+        "owner",
+        "uri"        
+      ],
+	  "additionalProperties": false
     },
     "links": {
       "type": "array",

@@ -20,7 +20,41 @@ The EiffelServiceDeployedEvent is to declare when a configuration item/VM  and/o
 It implies that the service is not in a running state and is ready to be started.
 
 ## Data Members
- 
+### data.servicename
+__Type:__ String  
+__Required:__ Yes  
+__Description:__ The name of the Service that was deployed.
+
+### data.instancename
+__Type:__ String  
+__Required:__ Yes  
+__Description:__ The name of the instance that was deployed.
+
+### data.owner
+__Type:__ String  
+__Required:__ Yes  
+__Description:__ The entity that has been assigned/responsible for the Service.
+
+### data.uri
+__Type:__ String  
+__Required:__ No  
+__Description:__ A URI where further information can be obtained, if applicable. 
+
+## Legal Link Types
+### ENVIRONMENT
+__Legal targets:__ [EiffelEnvironmentDefinedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelEnvironmentDefinedEvent.md)  
+__Multiple allowed:__ No  
+__Description:__ Identifies the environment in which an event occurred, e.g. in which environment an artifact was built or an issue was verified.
+
+### CONTEXT
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md), 
+__Multiple allowed:__ No  
+__Description:__ Identifies the activity of which the event constitutes a part. SHOULD not be used in conjunction with __CAUSE__, see above. Note that multiple layers may be modeled using __CONTEXT__, e.g. an activity being part of another activity.
+
+### ACTIVITY_EXECUTION
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
+__Multiple allowed:__ No  
+__Description:__ Declares the activity execution the event relates to. In other words, [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md) acts as a handle for the activity execution. This differs from __CONTEXT__. In __ACTIVITY_EXECUTION__ the source carries information pertaining to the target (i.e. the activity started, finished or was canceled). In __CONTEXT__, on the other hand, the source constitutes a subset of the target.
 
 ## Version History
 | Version   | Introduced in                                          | Changes                                 |
