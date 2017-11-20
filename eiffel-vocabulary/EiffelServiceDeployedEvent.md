@@ -35,6 +35,11 @@ __Type:__ String
 __Required:__ Yes  
 __Description:__ The entity that has been assigned/responsible for the Service.
 
+### data.deploymentType
+__Type:__ String  
+__Required:__ No  
+__Description:__  Label Type of deployment for service e.g Blue/green, A/B Testing, Canary.
+
 ### data.uri
 __Type:__ String  
 __Required:__ No  

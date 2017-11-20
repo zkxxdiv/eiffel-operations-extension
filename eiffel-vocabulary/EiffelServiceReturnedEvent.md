@@ -15,15 +15,15 @@
    limitations under the License.
 --->
 
-# EiffelServiceReleasedEvent  (ServR)
-The EiffelServiceReleasedEvent is to declare that a Service Instance (e.g VM) has been released from use.
+# EiffelServiceReturnedEvent  (ServR)
+The EiffelServiceReturnedEvent is to declare that a Service Instance (e.g VM) has been returned from use.
 
 ## Data Members
  
 ### data.serviceinstance
 __Type:__ String  
 __Required:__ Yes  
-__Description:__ The name of the Service instance that was released.
+__Description:__ The name of the Service instance that was returned.
 
 ### data.uri
 __Type:__ String  

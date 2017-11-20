@@ -10,7 +10,7 @@
         },
         "type": {
           "type": "string",
-          "enum": ["EiffelArtifactDeployedEvent"]
+          "enum": ["EiffelServiceDeployedEvent"]
         },
         "version": {
           "type": "string",
@@ -87,6 +87,9 @@
           "type": "string"
         },
 		"owner": {
+          "type": "string"
+        },
+		"deploymentType": {
           "type": "string"
         },
 		"uri": {
