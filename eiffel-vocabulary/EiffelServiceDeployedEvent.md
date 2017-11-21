@@ -51,6 +51,11 @@ __Legal targets:__ [EiffelEnvironmentDefinedEvent](https://github.com/Ericsson/e
 __Multiple allowed:__ No  
 __Description:__ Identifies the environment in which an event occurred, e.g. in which environment an artifact was built or an issue was verified.
 
+### CAUSE
+__Legal targets:__ Any  
+__Multiple allowed:__ Yes  
+__Description:__ Identifies a cause of the event occurring. SHOULD not be used in conjunction with __CONTEXT__: individual events providing __CAUSE__ within a larger context gives rise to ambiguity. It is instead recommended to let the root event of the context declare __CAUSE__.  
+
 ### CONTEXT
 __Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md), 
 __Multiple allowed:__ No  
