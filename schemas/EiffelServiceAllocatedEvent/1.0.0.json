@@ -6,15 +6,20 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
         },
         "type": {
           "type": "string",
-          "enum": ["EiffelServiceAllocatedEvent"]
+          "enum": [
+            "EiffelServiceAllocatedEvent"
+          ]
         },
         "version": {
           "type": "string",
-          "enum": [ "1.0.0" ],
+          "enum": [
+            "1.0.0"
+          ],
           "default": "1.0.0"
         },
         "time": {
@@ -66,6 +71,28 @@
             "domainId"
           ],
           "additionalProperties": false
+        },
+        "security": {
+          "type": "object",
+          "properties": {
+            "sdm": {
+              "type": "object",
+              "properties": {
+                "authorIdentity": {
+                  "type": "string"
+                },
+                "encryptedDigest": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "authorIdentity",
+                "encryptedDigest"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
         }
       },
       "required": [
@@ -80,15 +107,15 @@
     "data": {
       "type": "object",
       "properties": {
-	    "serviceinstance": {
+        "serviceinstance": {
           "type": "string"
         },
-		"owner": {
+        "owner": {
           "type": "string"
         },
-		"uri": {
+        "uri": {
           "type": "string"
-        },		
+        },
         "customData": {
           "type": "array",
           "items": {
@@ -97,8 +124,7 @@
               "key": {
                 "type": "string"
               },
-              "value": {
-              }
+              "value": {}
             },
             "required": [
               "key",
@@ -110,9 +136,9 @@
       },
       "required": [
         "serviceinstance",
-        "owner"       
+        "owner"
       ],
-	  "additionalProperties": false
+      "additionalProperties": false
     },
     "links": {
       "type": "array",
@@ -123,7 +149,8 @@
             "type": "string"
           },
           "target": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
           }
         },
         "required": [
