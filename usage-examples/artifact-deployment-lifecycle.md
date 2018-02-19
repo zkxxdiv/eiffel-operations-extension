@@ -19,7 +19,7 @@
  
 This example discusses how the traceability of an artifact's deployment lifecycle can be implemented using Eiffel events.
  
-Introduction
+# Introduction
 To understand the lifecycle of an artifact we must go back and start at the source.
 The origins of an artifact begin with the first checkin of code. Over time multiple commits & mergers culminate in the first built version of an artifact.
 This new artifact then goes through testing to ensure that the desired functionality and quality level etcera of the artifact has been achieved.
@@ -60,13 +60,13 @@ Using its SERVICE link, the EiffelServiceReturnedEvent (ServR1) declares a link 
 The EiffelServiceDiscontinuedEvent is to declare that an activity to tear down a Service Instance has completed. The tear down of a service instance may be exectuted by a Cloud Orchestractor/scheduler.
 Using its SERVICE link, the EiffelServiceDiscontinuedEvent (ServDi1) declares a link to EiffelServiceDeployedEvent (ServD1).
 
-## Metrics and Tracability examples
+# Metrics and Tracability examples
 There's a multitude of metrics that are relevant to measure in a continuous integration and delivery pipeline, for various purpose and for various stakeholders. An exhaustive list is impossible, but a few examples and how they may be collected using Eiffel events are presented below.
 
-### Follow my commit
+## Follow my commit
 Developer commits code, builds, tests and deploys a feature or bug fix into Operations. Measuring the time taken from the initial commit and the subsequent stages until deployed into operations provide significatant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
 
-### Cloud Resource utilization
+## Cloud Resource utilization
 Why tear down a working environment containing artifacts and services when they can be reused again and again by other test activities? 
 Resharing resources such as VM's and/or Services in a test environment leads to increased eifficiency of Cloud Resource deployment & utilization.
 Utlizing EiffelServiceReturnedEvent and EiffelServiceAllocatedEvents to declare the status of Test environments assists workflow orchestrators in getting the most from available resources.
