@@ -22,7 +22,7 @@ This example discusses how the traceability of an artifact's deployment lifecycl
 Introduction
 To understand the lifecycle of an artifact we must go back and start at the source.
 The origins of an artifact begin with the first checkin of code. Over time multiple commits & mergers culminate in the first built version of an artifact.
-This new artifact then goes through testing to ensure that the desired functionality and quality level etc,.of the artifact has been achieved.
+This new artifact then goes through testing to ensure that the desired functionality and quality level etcera of the artifact has been achieved.
 Once this has been established the artifact is released and deployed into Operations where it lives until it is replaced by another version and then finally it is discontinued from use altogether.
 Having the capability to track & trace the entire lifecycle of artifacts is highly desirable in a CI/CD context.
 In the context of continuous deployment, track and trace may be achieved by employing events such as EiffelServiceDeployedEvent, EiffelArtifactDeployedEvent & EiffelServiceStartedEvent.
@@ -34,29 +34,42 @@ In the context of continuous deployment, track and trace may be achieved by empl
 
 # Event-by-Event Explanation
 
-# ServDe1
-EiffelServiceDeployedEvent ServDe1 in this example representing a Service Instance (e.g VM) has been deployed.
+# ServA1
+The EiffelServiceAllocatedEvent is to declare an instance has been allocated to a User.( e.g global scheduler or resource booking tool).
 
-# ActT1
-EiffelActivityTriggeredEvent ArtT1 in this example representing activities performed by an Orchestrator/resource scheduler.
-Using its CAUSE link, the EiffelActivityTriggeredEvent ActT1 declares that it is CAUSED by EiffelServiceDeployedEvent ServDe1.
+# ArtD(n+1)
+The EiffelArtifactDeployedEvent declares that an artifact has been deployed into an environment.
 
-# ArtD1
-EiffelArtifactDeployedEvent ArtD1 in this example representing an artifact has been deployed into the Service Instance.
-Using its CAUSE link, the EiffelArtifactDeployedEvent ArtD1 declares that it is CAUSED by EiffelActivityTriggeredEvent ActT1
-
-# ActT2
-EiffelActivityTriggeredEvent ActT2, in this example representing activities performed by an entity.
-Using its CAUSE link, the EiffelActivityTriggeredEvents ActT2 declares that is CAUSED by EiffelArtifactDeployedEvent ArtD1.
-
-# ServDe2
-EiffelServiceDeployedEvent ServDe2 in this example representing a Service has been deployed.
-Using its CAUSE link, the EiffelServiceDeployedEvent ServDe1 declares that is CAUSED by EiffelActivityTriggeredEvent ActT2.
-
-# ActT3
-EiffelActivityTriggeredEvent ActT3 in this example representing activities performed by an entity.
-Using its CAUSE link, the EiffelActivityTriggeredEvents ActT3 declares that is CAUSED by EiffelServiceDeployedEvent ServDe1.
+# ServD1
+The EiffelServiceDeployedEvent is to declare when a configuration item/VM and/or Service has been deployed by a machine/human. It implies that the service is not in a running state and is ready to be started.
+Using its ARTIFACT_DEPLOYED link, the EiffelServiceDeployedEvent (ServD1) declares links ArtD(n+1) events.
 
 # ServSta1
-EiffelServiceStartedEvent ServSra1 in this example representing a Service has been started.
-Using its CAUSE link, the EiffelServiceStartedEvent ServSta1 declares that it is CAUSED by EiffelActivityTriggeredEvents ActT3.
+The EiffelServiceStartedEvent is to declare that a Service has been started and is running.
+Using its SERVICE link, the EiffelServiceStartedEvent (ServSta1) declares a link to EiffelServiceDeployedEvent (ServD1).
+
+# ServSto1
+The EiffelServiceStoppedEvent is to declare that a Service has been stopped.
+Using its SERVICE link, the EiffelServiceStoppedEvent (ServSto1) declares a link to EiffelServiceDeployedEvent (ServD1).
+
+# ServR1
+The EiffelServiceReturnedEvent is to declare that a Service Instance (e.g VM) has been returned from use.
+Using its SERVICE link, the EiffelServiceReturnedEvent (ServR1) declares a link to EiffelServiceDeployedEvent (ServD1).
+
+# ServDi1
+The EiffelServiceDiscontinuedEvent is to declare that a activity to tear down a Service Instance has completed. The tear down of a service instance may be exectuted by a Cloud Orchestractor/scheduler.
+Using its SERVICE link, the EiffelServiceDiscontinuedEvent (ServDi1) declares a link to EiffelServiceDeployedEvent (ServD1).
+
+## Metrics and Tracability examples
+There's a multitude of metrics that are relevant to measure in a continuous integration and delivery pipeline, for various purpose and for various stakeholders. An exhaustive list is impossible, but a few examples and how they may be collected using Eiffel events are presented below.
+
+### Follow my commit
+Developer commits code, builds, tests and deploys a feature or bug fix into Operations. Measuring the time taken from the initial commit and the subsequent stages until deployed into operations provide significatant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
+
+### Cloud Resource utilization
+Why tear down a working environment containing artifacts and services when they can be reused again and again by other test activities? 
+Resharing resources such as VM's and/or Services in a test environment leads to increased eifficiency of Cloud Resource deployment & utilization.
+Utlizing EiffelServiceReturnedEvent and EiffelServiceAllocatedEvents to declare the status of Test environments assists workflow orchestrators in getting the most from available resources.
+
+
+
