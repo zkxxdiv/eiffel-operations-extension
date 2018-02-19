@@ -57,7 +57,7 @@ The EiffelServiceReturnedEvent is to declare that a Service Instance (e.g VM) ha
 Using its SERVICE link, the EiffelServiceReturnedEvent (ServR1) declares a link to EiffelServiceDeployedEvent (ServD1).
 
 # ServDi1
-The EiffelServiceDiscontinuedEvent is to declare that a activity to tear down a Service Instance has completed. The tear down of a service instance may be exectuted by a Cloud Orchestractor/scheduler.
+The EiffelServiceDiscontinuedEvent is to declare that an activity to tear down a Service Instance has completed. The tear down of a service instance may be exectuted by a Cloud Orchestractor/scheduler.
 Using its SERVICE link, the EiffelServiceDiscontinuedEvent (ServDi1) declares a link to EiffelServiceDeployedEvent (ServD1).
 
 ## Metrics and Tracability examples
