@@ -27,6 +27,7 @@ Once this has been established the artifact is released and deployed into Operat
 Having the capability to track & trace the entire lifecycle of artifacts is highly desirable in a CI/CD context.
 In the context of continuous deployment, track and trace may be achieved by employing events such as EiffelServiceDeployedEvent, EiffelArtifactDeployedEvent & EiffelServiceStartedEvent.
 
+A JSON array of all events used in this example can be found [here](../examples/flows/artifact-deployment/events.json).
 
 ## Event Graph
 ![alt text](./artifact-deployment-lifecycle.png "Event Graph of artifact deployment lifecycle Example")
@@ -64,7 +65,7 @@ Using its SERVICE link, the EiffelServiceDiscontinuedEvent (ServDi1) declares a 
 There's a multitude of metrics that are relevant to measure in a continuous integration and delivery pipeline, for various purpose and for various stakeholders. An exhaustive list is impossible, but a few examples and how they may be collected using Eiffel events are presented below.
 
 ## Follow my commits
-Developers commit code, builds, tests and deploys features and/or bug fix into Operations. Measuring the frequency & time taken from the initial commit and the subsequent stages until deployed into operations provide significatant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
+Developers commit code, build, test and deploys features and/or bug fixs into Operations. Measuring the frequency & time taken for commits and their subsequent progression until deployed into operations provides significant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
 
 ## Cloud Resource utilization
 Why tear down a working environment containing artifacts and services when they can be reused again and again by other test activities? 
