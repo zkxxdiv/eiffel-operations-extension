@@ -27,11 +27,11 @@ Or suppose that the target of your artifact's deployment suddenly lost storage c
 Wouldn’t it be good if this type of information was made readily available to your CI/CD automatically, so that contingency plans may be implemented to prevent something breaking or to at least mitigate the impact of an outage affecting the CI/CD.
 Facilitating for the integration of observational activities and subsequent notification into a CI/CD in an automated fashion is highly desirable.
 This may be achieve by utilizing the EiffelAlertRaisedEvent (AlerR) and EiffelAlertAcknowledgedEvent (AlerA) as a synchronous partner pair.
-For example, suppose there is an activity that publishes an EiffelAlterRaisedEvent (AlerR) containing information that something has happened (e.g Service A is down) which is subsequently consumed and triggers another activity that publishes an EiffelAlertAcknowledgedEvent  acknowledging that Service A is down ("first responder" acknowledgement).
-The first responder entity may for example be used to trigger subsequent Activities to resolve the impact of "Service A is down" or may be used to pause your CI/CD activity until a  EiffelAlertCaesedEvent (AlerC) is published with information stating a modified status of Service A (e.g "Service A is Alive") indicating that the problem has been resolved.
+For example, suppose there is an activity that publishes an EiffelAlertRaisedEvent (AlerR) containing information that something has happened (e.g Service A is down) which is subsequently consumed and triggers another activity that publishes an EiffelAlertAcknowledgedEvent  acknowledging that Service A is down ("first responder" acknowledgement).
+The first responder entity may for example be used to trigger subsequent Activities to resolve the impact of "Service A is down" or may be used to pause your CI/CD activity until a  EiffelAlertCeasedEvent (AlerC) is published with information stating a modified status of Service A (e.g "Service A is Alive") indicating that the problem has been resolved.
 
 
-A JSON array of all events used in this example can be found "here"
+A JSON array of all events used in this example can be found [here](../examples/flows/aliveness-monitoring/events.json).
 
 ## Event Graph
 ![alt text](./aliveness-monitoring.png "Event Graph of aliveness monitroring Example")
@@ -54,3 +54,6 @@ EiffelAlertAcknowledgedEvent (AlerA) in this example representing the acknowledg
 
 # ActT3
 EiffelActivityTriggeredEvent(ActT), in this example representing triggering activities. Using its CAUSE link, the EiffelActivityTriggeredEvents ActT3 declares that it is CAUSED by EiffelAlertAcknowledgedEvent (AlerA).
+
+# AlerC1
+The EiffelAlertCeasedEvent (AlerC) in this example representing an incident which was ongoing (e.g an IT Infrastruture failure) has now come to an end and has ceased.
