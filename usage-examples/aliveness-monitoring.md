@@ -1,5 +1,5 @@
 <!---
-   Copyright 2017 Ericsson AB.
+   Copyright 2018 Ericsson AB.
    For a full list of individual contributors, please see the commit history.
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,9 +26,9 @@ For example, what if a Cloud environment orchestrator became unavailable due to 
 Or suppose that the target of your artifact's deployment suddenly lost storage connectivity, how would this affect the CI/CD, would it fail and require manual intervention to get it back up and running?
 Wouldn’t it be good if this type of information was made readily available to your CI/CD automatically, so that contingency plans may be implemented to prevent something breaking or to at least mitigate the impact of an outage affecting the CI/CD.
 Facilitating for the integration of observational activities and subsequent notification into a CI/CD in an automated fashion is highly desirable.
-This may be achieve by utilizing the EiffelAnnounmentPublishedEvent AnnP and EiffelAnnounmentAchnowledgedEvent as a synchronous partner pair.
-For example, suppose there is an activity that publishes an EiffelAnnouncementEvent containing information that something has happened (e.g Service A is down) which is subsequently consumed and triggers another activity that publishes an EiffelAnnouncementAcknowledgedEvent  acknowledging that Service A is down ("first responder" acknowledgement)
-The first responder entity may for example be used to trigger subsequent Activities to resolve the impact of "Service A is down" or may be used to pause your CI/CD activity until a  EiffelAnnounmentPublishedEvent is published with information stating a modified status of Service A (e.g "Service A is Alive") indicating that the problem has been resolved.
+This may be achieve by utilizing the EiffelAlertRaisedEvent (AlerR) and EiffelAlertAcknowledgedEvent (AlerA) as a synchronous partner pair.
+For example, suppose there is an activity that publishes an EiffelAlterRaisedEvent (AlerR) containing information that something has happened (e.g Service A is down) which is subsequently consumed and triggers another activity that publishes an EiffelAlertAcknowledgedEvent  acknowledging that Service A is down ("first responder" acknowledgement).
+The first responder entity may for example be used to trigger subsequent Activities to resolve the impact of "Service A is down" or may be used to pause your CI/CD activity until a  EiffelAlertCaesedEvent (AlerC) is published with information stating a modified status of Service A (e.g "Service A is Alive") indicating that the problem has been resolved.
 
 
 A JSON array of all events used in this example can be found "here"
@@ -43,14 +43,14 @@ A JSON array of all events used in this example can be found "here"
 # ActT1
 EiffelActivityTriggeredEvent (ActT), representing that monitoring activities has been triggered.
 
-# AnnP
-EiffelAnnouncementPublished (AnnP) in this example representing an announcement that something has happened (e.g Service A is down). Using it's CAUSE link, the EiffelAnnouncementPublished AnnP declares that it is part of the previous monitoring Activity.
+# AlerR
+EiffelAlertRaisedEvent (AlerR) in this example representing an announcement that something has happened (e.g Service A is down). Using it's CAUSE link, the EiffelAlertRaisedEvent (AlerR) declares that it is part of the previous monitoring Activity.
 
 # ActT2
-EiffelActivityTriggeredEvent (ActT) in this example representing that monitoring activities have been triggered as a result of the previous EiffelAnnouncementPublished AnnP. Using it CAUSE link, the EiffelActivityTriggeredEvents ActT2 declares that is CAUSED by AnnouncementPublishedEvent AnnP.
+EiffelActivityTriggeredEvent (ActT) in this example representing that monitoring activities have been triggered as a result of the previous EiffelAlertRaisedEvent (AlerR). Using it CAUSE link, the EiffelActivityTriggeredEvents ActT2 declares a link to EiffelAlertRaisedEvent (AlerR).
 
-# AnnA
-EiffelAnnouncmentAcknowledged (AnnA) in this example representing the acknowledgement of the EiffelAnnouncementPublishedEvent. Using it CAUSE link, the EiffelAnnouncmentAcknowledged AnnA declares that is part of the previous activity and is CAUSED by AnnouncementPublishedEvent AnnP
+# AlerA
+EiffelAlertAcknowledgedEvent (AlerA) in this example representing the acknowledgement of the EiffelAlertRaisedEvent. Using it CAUSE link, the EiffelAlertAcknowledgedEvent (AlerA) declares that is part of the previous activity and is CAUSED by EiffelAlertRaisedEvent (AlerR).
 
 # ActT3
-EiffelActivityTriggeredEvent(ActT), in this example representing triggering activities. Using its CAUSE link, the EiffelActivityTriggeredEvents ActT3 declares that it is CAUSED by EiffelAnnouncmentAcknowledged AnnA.
+EiffelActivityTriggeredEvent(ActT), in this example representing triggering activities. Using its CAUSE link, the EiffelActivityTriggeredEvents ActT3 declares that it is CAUSED by EiffelAlertAcknowledgedEvent (AlerA).
