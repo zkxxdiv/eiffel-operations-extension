@@ -26,7 +26,7 @@ __Description:__ The identity of the user or entity that ceased the incident.
 
 ## Links
 ### ALERT
-__Required:__ Yes 
+__Required:__ Yes  
 __Legal targets:__ [EiffelAlertRaisedEvent](./EiffelAlertRaisedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the ALERT that has been resolved.

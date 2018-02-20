@@ -50,7 +50,7 @@ previous Alert raised event which should be linked with MODIFIED_ALERT.
  
 ## Links
 ### MODIFIED_ALERT
-__Required:__ No 
+__Required:__ No  
 __Legal targets:__ [EiffelAlertRaisedEvent](./EiffelAlertRaisedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the ALERT that has been raised previously but is canceled now. Should be used in conjunction with severity of CANCELED.
