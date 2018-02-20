@@ -29,8 +29,8 @@ __Description:__  A URI where further information can be obtained, if applicable
 
 ### ARTIFACT
 __Required:__ Yes  
-__Legal targets:__ [EiffelArtifactCreatedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelArtifactCreatedEvent.md)  
-__Multiple allowed:__ Yes  
+__Legal targets:__ [EiffelArtifactCreatedEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelArtifactCreatedEvent.md)  
+__Multiple allowed:__ No  
 __Description:__ Identifies the artifact that was deployed
 
 
@@ -42,13 +42,13 @@ __Description:__ Identifies a cause of the event occurring. SHOULD not be used i
 
 ### CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the activity of which the event constitutes a part. SHOULD not be used in conjunction with __CAUSE__, see above. Note that multiple layers may be modeled using __CONTEXT__, e.g. an activity being part of another activity.
 
 ### FLOW_CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
+__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
 __Multiple allowed:__ Yes  
 __Description:__ Identifies the flow context of the event: which is the continuous integration and delivery flow in which this occurred - e.g. which product, project, track or version this is applicable to.
 

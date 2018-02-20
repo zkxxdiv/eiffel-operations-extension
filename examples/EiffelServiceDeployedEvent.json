@@ -13,11 +13,12 @@
     "servicename": "linux.server",
     "instancename": "server1.domain.com",
     "owner": "johndoe",
-    "uri": "http://service-uri"
+    "deploymentType": "Canary",
+    "uri": "http://sample.com/instance/server1"
   },
   "links": [
     {
-      "type": "CAUSE",
+      "type": "ARTIFACT_DEPLOYED",
       "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee1"
     },
     {
@@ -25,8 +26,12 @@
       "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee2"
     },
     {
-      "type": "ACTIVITY_EXECUTION",
-      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee3"
+      "type": "FLOW_CONTEXT",
+      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee4"
+    },
+    {
+      "type": "SERVICE",
+      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee5"
     }
   ]   
 

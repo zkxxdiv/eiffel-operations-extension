@@ -47,11 +47,11 @@ __Required:__ Yes
 __Legal values:__ MINOR, MAJOR, CRITICAL, BLOCKER, CANCELED
 __Description:__ The severity of the incident.The CANCELED value SHOULD only be used when following up a 
 previous Alert raised event which should be linked with MODIFIED_ALERT.
-
+ 
 ## Links
 ### MODIFIED_ALERT
 __Required:__ No 
-__Legal targets:__ [EiffelAlertRaisedEvent](https://github.com/Ericsson/eiffel-operations-extension/blob/master/eiffel-vocabulary/EiffelAlertRaisedEvent.md)  
+__Legal targets:__ [EiffelAlertRaisedEvent](./EiffelAlertRaisedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the ALERT that has been raised previously but is canceled now. Should be used in conjunction with severity of CANCELED.
 
@@ -63,13 +63,13 @@ __Description:__ Identifies a cause of the event occurring. SHOULD not be used i
 
 ### CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the activity of which this event constitutes a part.
-
+ 
 ### FLOW_CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
+__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the flow context of the event: which is the continuous integration and delivery flow in which this occurred – e.g. which product, project, track or version this is applicable to.
 

@@ -12,18 +12,23 @@
     "uri": "http://sample.com"
   },
   "links": [
-    {
-      "type": "CAUSE",
+  	{
+      "type": "ARTIFACT",
       "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee1"
     },
     {
-      "type": "CONTEXT",
+      "type": "ARTIFACT",
       "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee2"
     },
     {
-      "type": "ACTIVITY_EXECUTION",
+      "type": "CONTEXT",
       "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee3"
+    },
+    {
+      "type": "FLOW_CONTEXT",
+      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee4"
     }
+    
   ]   
 
 }

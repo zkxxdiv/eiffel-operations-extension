@@ -67,7 +67,7 @@ __Description:__ Identifies the service that artifacts was deployed at
 
 ### FLOW_CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
+__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
 __Multiple allowed:__ Yes  
 __Description:__ Identifies the flow context of the event: which is the continuous integration and delivery flow in which this occurred - e.g. which product, project, track or version this is applicable to.
 
@@ -181,7 +181,7 @@ __Type:__ String
 __Format:__  
 __Required:__ Yes  
 __Description:__ The identity of the author of the event. This property is intended to enable the recipient to look up the appropriate public key for decrypting the digest and thereby verifying author identity and data integrity. The format of the author identity varies depending on the key infrastructure solution used. Note that this requires the presence of a Trusted Authority (TA) which the recipient can query for the correct public key. The identity and location of the TA must never be included in the event itself, as this would compromise the security of the solution.
-
+ 
 ##### meta.security.sdm.encryptedDigest
 __Type:__ String  
 __Format:__  

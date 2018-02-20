@@ -1,7 +1,6 @@
-
 {
   "meta": {
-    "type": "EiffelServiceAllocatedEvent",
+    "type": "EiffelAlertCeasedEvent",
     "version": "1.0.0",
     "time": 1234567890,
     "id": "aaaaaaaa-bbbb-5ccc-8ddd-eedeeeeeeee0",
@@ -9,21 +8,21 @@
             "domainId":"domain"
      }
   },
-
   "data": {
-    "serviceinstance": "Sever1.domain.com",
-    "owner": "booking.system"
+    "entity":"machine1"
   },
   "links": [
     {
-      "type": "CONTEXT",
-      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee2"
+      "type": "ALERT",
+      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee1"
     },
-     {
+    {
+      "type": "CONTEXT",
+      "target": "babaaaaa-bcbb-5cdc-9ded-eeeefeeeeee2"
+    },
+    {
       "type": "FLOW_CONTEXT",
-      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee4"
+      "target": "aaaaaaaa-bbbb-5ccc-8ddd-eeeeeeeeeee2"
     }
   ]   
-
 }
-

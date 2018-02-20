@@ -12,11 +12,11 @@
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
-   limitations under the License.
+   limitations under the License. 
 --->
 
 # EiffelAlertCeasedEvent (AlerC)
-The EiffelAlertCeasedEvent is to declare, that an previously raised incident (declared by [EiffelAlertRaisedEvent](https://github.com/Ericsson/eiffel-operations-extension/blob/master/eiffel-vocabulary/EiffelAlertRaisedEvent.md)) has been resolved.
+The EiffelAlertCeasedEvent is to declare, that an previously raised incident (declared by [EiffelAlertRaisedEvent](./EiffelAlertRaisedEvent.md)) has been resolved.
 
 ## Data Members
 ### data.entity
@@ -27,7 +27,7 @@ __Description:__ The identity of the user or entity that ceased the incident.
 ## Links
 ### ALERT
 __Required:__ Yes 
-__Legal targets:__ [EiffelAlertRaisedEvent](https://github.com/Ericsson/eiffel-operations-extension/blob/master/eiffel-vocabulary/EiffelAlertRaisedEvent.md)  
+__Legal targets:__ [EiffelAlertRaisedEvent](./EiffelAlertRaisedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the ALERT that has been resolved.
 
@@ -39,13 +39,13 @@ __Description:__ Identifies a cause of the event occurring. SHOULD not be used i
 
 ### CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)
+__Legal targets:__ [EiffelActivityTriggeredEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelActivityTriggeredEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the activity of which this event constitutes a part.
 
 ### FLOW_CONTEXT
 __Required:__ No  
-__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/blob/master/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
+__Legal targets:__ [EiffelFlowContextDefinedEvent](https://github.com/Ericsson/eiffel/tree/edition-toulouse/eiffel-vocabulary/EiffelFlowContextDefinedEvent.md)  
 __Multiple allowed:__ No  
 __Description:__ Identifies the flow context of the event: which is the continuous integration and delivery flow in which this occurred – e.g. which product, project, track or version this is applicable to.
 
