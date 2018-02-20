@@ -63,8 +63,8 @@ Using its SERVICE link, the EiffelServiceDiscontinuedEvent (ServDi1) declares a 
 # Metrics and Tracability examples
 There's a multitude of metrics that are relevant to measure in a continuous integration and delivery pipeline, for various purpose and for various stakeholders. An exhaustive list is impossible, but a few examples and how they may be collected using Eiffel events are presented below.
 
-## Follow my commit
-Developer commits code, builds, tests and deploys a feature or bug fix into Operations. Measuring the time taken from the initial commit and the subsequent stages until deployed into operations provide significatant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
+## Follow my commits
+Developers commit code, builds, tests and deploys features and/or bug fix into Operations. Measuring the frequency & time taken from the initial commit and the subsequent stages until deployed into operations provide significatant insights into the efficiency and bottlenecks in a team's E2E CI/CD processes.
 
 ## Cloud Resource utilization
 Why tear down a working environment containing artifacts and services when they can be reused again and again by other test activities? 
