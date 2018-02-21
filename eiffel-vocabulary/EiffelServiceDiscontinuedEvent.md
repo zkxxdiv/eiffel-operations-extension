@@ -18,17 +18,6 @@
 # EiffelServiceDiscontinuedEvent  (ServDi)
 The EiffelServiceDiscontinuedEvent is to declare that a activity to tear down a Service Instance has completed. The tear down of a service instance may be exectuted by a Cloud Orchestrator/scheduler.
 
-## Data Members
-### data.serviceinstance
-__Type:__ String  
-__Required:__ Yes  
-__Description:__ The name of the Service instance that was discontinued for tear down.
-
-### data.uri
-__Type:__ String  
-__Required:__ No  
-__Description:__ A URI where further information can be obtained, if applicable.
-
 ## Legal Link Types 
 ### CAUSE
 __Required:__ No  

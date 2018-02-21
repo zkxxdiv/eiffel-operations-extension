@@ -32,7 +32,7 @@ __Description:__ The entity that has been assigned/responsible for the Service.
 ### data.uri
 __Type:__ String  
 __Required:__ No  
-__Description:__ A URI where further information can be obtained, if applicable.
+__Description:__ A URI where further information can be obtained about the allocation, if applicable.
 
 ## Links
 

@@ -43,7 +43,7 @@ __Description:__  Label Type of deployment for service e.g Blue/green, A/B Testi
 ### data.uri
 __Type:__ String  
 __Required:__ No  
-__Description:__ A URI where further information can be obtained, if applicable. 
+__Description:__ A URI where further information can be obtained about the deployment, if applicable. 
 
 ## Links 
 

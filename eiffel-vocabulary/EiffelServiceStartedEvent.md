@@ -18,23 +18,11 @@
 # EiffelServiceStartedEvent (ServSta)
 The EiffelServiceStartedEvent is to declare that a Service has been started and is running. The service is previously deployed (declared by [EiffelServiceDeployedEvent](./EiffelServiceDeployedEvent.md))
 
- 
-
 ## Data Members
-### data.serviceinstance
-__Type:__ String  
-__Required:__ Yes  
-__Description:__ The name of the Service instance that was started.
-
 ### data.pid
 __Type:__ String  
 __Required:__ No  
 __Description:__ The process id of the Service.
-
-### data.uri
-__Type:__ String  
-__Required:__ No  
-__Description:__ A URI where further information can be obtained, if applicable. 
 
 ## Links 
 ### CAUSE
