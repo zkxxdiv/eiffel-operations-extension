@@ -35,7 +35,6 @@ __Required:__ No
 __Description:__ A URI where further information can be obtained about the allocation, if applicable.
 
 ## Links
-
 ### CAUSE
 __Required:__ No  
 __Legal targets:__ Any  

@@ -8,9 +8,7 @@
             "domainId":"domain"
      }
   },
-  "data": {
-    "serviceinstance": "server1.domain.com",
-    "uri": "http://service-uri"
+  "data": {    
   },
   "links": [
      {

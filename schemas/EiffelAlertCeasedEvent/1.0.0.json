@@ -12,7 +12,7 @@
         "type": {
           "type": "string",
           "enum": [
-            "EiffelServiceAllocatedEvent"
+            "EiffelAlertCeasedEvent"
           ]
         },
         "version": {
@@ -66,7 +66,7 @@
             "uri": {
               "type": "string"
             }
-          },          
+          },         
           "additionalProperties": false
         },
         "security": {
@@ -104,15 +104,9 @@
     "data": {
       "type": "object",
       "properties": {
-        "serviceinstance": {
+        "entity": {
           "type": "string"
-        },
-        "owner": {
-          "type": "string"
-        },
-        "uri": {
-          "type": "string"
-        },
+        },        
         "customData": {
           "type": "array",
           "items": {
@@ -130,11 +124,7 @@
             "additionalProperties": false
           }
         }
-      },
-      "required": [
-        "serviceinstance",
-        "owner"
-      ],
+      },     
       "additionalProperties": false
     },
     "links": {

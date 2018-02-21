@@ -66,10 +66,7 @@
             "uri": {
               "type": "string"
             }
-          },
-          "required": [
-            "domainId"
-          ],
+          },          
           "additionalProperties": false
         },
         "security": {
@@ -106,13 +103,7 @@
     },
     "data": {
       "type": "object",
-      "properties": {
-        "serviceinstance": {
-          "type": "string"
-        },
-        "uri": {
-          "type": "string"
-        },
+      "properties": {       
         "customData": {
           "type": "array",
           "items": {
@@ -130,10 +121,7 @@
             "additionalProperties": false
           }
         }
-      },
-      "required": [
-        "serviceinstance"
-      ],
+      },     
       "additionalProperties": false
     },
     "links": {

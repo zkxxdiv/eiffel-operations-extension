@@ -8,10 +8,8 @@
             "domainId":"domain"
      }
   },
-  "data": {
-    "serviceinstance": "server1.domain.com",
-    "pid": "10401",
-    "uri": "http://service-uri"
+  "data": {    
+    "pid": "10401"    
   },
   "links": [
     {

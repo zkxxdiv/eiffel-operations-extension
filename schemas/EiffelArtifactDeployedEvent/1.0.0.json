@@ -66,10 +66,7 @@
             "uri": {
               "type": "string"
             }
-          },
-          "required": [
-            "domainId"
-          ],
+          },         
           "additionalProperties": false
         },
         "security": {
@@ -107,9 +104,6 @@
     "data": {
       "type": "object",
       "properties": {
-        "location": {
-          "type": "string"
-        },
         "uri": {
           "type": "string"
         },

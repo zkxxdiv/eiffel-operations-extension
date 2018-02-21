@@ -12,7 +12,7 @@
         "type": {
           "type": "string",
           "enum": [
-            "EiffelServiceAllocatedEvent"
+            "EiffelAlertAcknowledgedEvent"
           ]
         },
         "version": {
@@ -104,15 +104,12 @@
     "data": {
       "type": "object",
       "properties": {
-        "serviceinstance": {
+        "acknowledgement": {
           "type": "string"
         },
-        "owner": {
+        "entity": {
           "type": "string"
-        },
-        "uri": {
-          "type": "string"
-        },
+        },        
         "customData": {
           "type": "array",
           "items": {
@@ -132,8 +129,7 @@
         }
       },
       "required": [
-        "serviceinstance",
-        "owner"
+        "acknowledgement"
       ],
       "additionalProperties": false
     },

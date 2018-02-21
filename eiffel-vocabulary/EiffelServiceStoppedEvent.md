@@ -18,18 +18,6 @@
 # EiffelServiceStoppedEvent  (ServSto)
 The EiffelServiceStoppedEvent is to declare that a Service has been stopped.
 
-## Data Members
-
-### data.serviceinstance
-__Type:__ String  
-__Required:__ Yes  
-__Description:__ The name of the Service instance  that was stopped .
-
-### data.uri
-__Type:__ String  
-__Required:__ No  
-__Description:__ A URI where further information can be obtained, if applicable. 
-
 ## Links 
 ### CAUSE
 __Required:__ No  

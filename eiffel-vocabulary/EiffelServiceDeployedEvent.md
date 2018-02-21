@@ -45,8 +45,7 @@ __Type:__ String
 __Required:__ No  
 __Description:__ A URI where further information can be obtained about the deployment, if applicable. 
 
-## Links 
-
+## Links
 ### ARTIFACT_DEPLOYED
 __Required:__ No  
 __Legal targets:__ [EiffelArtifactDeployedEvent](./EiffelArtifactDeployedEvent.md)  
