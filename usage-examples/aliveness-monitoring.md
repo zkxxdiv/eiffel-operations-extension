@@ -30,9 +30,6 @@ This may be achieve by utilizing the EiffelAlertRaisedEvent (AlerR) and EiffelAl
 For example, suppose there is an activity that publishes an EiffelAlertRaisedEvent (AlerR) containing information that something has happened (e.g Service A is down) which is subsequently consumed and triggers another activity that publishes an EiffelAlertAcknowledgedEvent  acknowledging that Service A is down ("first responder" acknowledgement).
 The first responder entity may for example be used to trigger subsequent Activities to resolve the impact of "Service A is down" or may be used to pause your CI/CD activity until a  EiffelAlertCeasedEvent (AlerC) is published with information stating a modified status of Service A (e.g "Service A is Alive") indicating that the problem has been resolved.
 
-
-A JSON array of all events used in this example can be found [here](../examples/flows/aliveness-monitoring/events.json).
-
 ## Event Graph
 ![alt text](./aliveness-monitoring.png "Event Graph of aliveness monitroring Example")
 

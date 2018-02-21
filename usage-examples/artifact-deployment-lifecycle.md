@@ -27,7 +27,6 @@ Once this has been established the artifact is released and deployed into Operat
 Having the capability to track & trace the entire lifecycle of artifacts is highly desirable in a CI/CD context.
 In the context of continuous deployment, track and trace may be achieved by employing events such as EiffelServiceDeployedEvent, EiffelArtifactDeployedEvent & EiffelServiceStartedEvent.
 
-A JSON array of all events used in this example can be found [here](../examples/flows/artifact-deployment/events.json).
 
 ## Event Graph
 ![alt text](./artifact-deployment-lifecycle.png "Event Graph of artifact deployment lifecycle Example")
